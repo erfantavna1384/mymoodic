@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contact %}
+    <div class="user-area pt-100 pb-70">
+        <div class="container">
+            <div class="user-width">
+                <div class="user-form">
+                    <div class="contact-form">
+                        <h2>ورود</h2>
+                        <form method="post">
+                            {% csrf_token %}
+                            {% if eroor %}
+                                <div
+                                        class="alert alert-danger alert-dismissible fade show"
+                                        role="alert"
+                                >
+                                    {% for e in eroor %}
+                                        <div>{{ e }}</div>
+                                    {% endfor %}
+                                    <button
+                                            type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="alert"
+                                            aria-label="Close"
+                                    ></button>
+                                </div>
+                            {% endif %}
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                required
+                                                data-error="Please enter your Username or Email"
+                                                placeholder="نام کاربری"
+                                                name="username"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input
+                                                class="form-control"
+                                                type="password"
+                                                name="password"
+                                                placeholder="رمز عبور"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 form-condition">
+                                    <div class="agree-label">
+                                        <input type="checkbox" id="chb1"/>
+                                        <label for="chb1">
+                                            ذخیره کردن
+                                            <a
+                                                    class="forget" href="forget-password.html"
+                                            >فراموشی رمز عبور؟</a
+                                            >
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <button type="submit" class="default-btn btn-bg-three">
+                                        درخواست ورود
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

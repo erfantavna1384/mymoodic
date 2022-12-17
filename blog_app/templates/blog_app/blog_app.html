@@ -1,0 +1,253 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contact %}
+    <div class="blog-details-area pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="blog-article">
+                        <div class="blog-article-img">
+                            <img
+                                    src="assets/images/blog/blog-details-img1.jpg" alt="Images"/>
+                            <div class="blog-article-tag">
+                                <span>{{ article.created }}</span>
+                            </div>
+                        </div>
+
+                        <div class="blog-article-title">
+                            <h2>{{ article.short_description }}</h2>
+                            <ul>
+                                <li><i class="bx bx-user"></i>{{ article.author.username }}</li>
+                            </ul>
+                        </div>
+
+                        <div class="article-content">
+                            {#								<p>#}
+                            {#									#}
+                            {#								</p>#}
+
+                            <blockquote class="blockquote">
+                                <p>
+                                    {{ article.body }}
+                                </p>
+                            </blockquote>
+
+                        </div>
+
+                        <div class="another-content">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6">
+                                    <div class="another-content-text">
+                                        {#											<p>#}
+                                        {#												لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت#}
+                                        {#												چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون#}
+                                        {#												بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و#}
+                                        {#												برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با#}
+                                        {#												هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت#}
+                                        {#												و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و#}
+                                        {#												متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را#}
+                                        {#												برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ#}
+                                        {#												پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید#}
+                                        {#												داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط#}
+                                        {#												سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی#}
+                                        {#												دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود#}
+                                        {#												طراحی اساسا مورد استفاده قرار گیرد.لورم ایپسوم متن#}
+                                        {#												ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده#}
+                                        {#												از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله#}
+                                        {#												در ستون و سطرآنچنان که لازم است و برای شرایط فعلی#}
+                                        {#												تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود#}
+                                        {#												ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد#}
+                                        {#												گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می#}
+                                        {#												طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان#}
+                                        {#												رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان#}
+                                        {#												فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و#}
+                                        {#												دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان#}
+                                        {#												رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و#}
+                                        {#												جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد#}
+                                        {#												استفاده قرار گیرد.#}
+                                        {#											</p>#}
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="content-img">
+                                        <img src="{% static "images/blog-img.jpg" %}" alt="Images"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="article-content">
+                            {#								<p>#}
+                            {#									لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با#}
+                            {#									استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و#}
+                            {#									مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی#}
+                            {#									تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای#}
+                            {#									کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و#}
+                            {#									آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم#}
+                            {#									افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص#}
+                            {#									طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این#}
+                            {#									صورت می توان امید داشت که تمام و دشواری موجود در ارائه#}
+                            {#									راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل#}
+                            {#									حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای#}
+                            {#									موجود طراحی اساسا مورد استفاده قرار گیرد.#}
+                            {#								</p>#}
+                            {##}
+                            {#								<p>#}
+                            {#									لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با#}
+                            {#									استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و#}
+                            {#									مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی#}
+                            {#									تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای#}
+                            {#									کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و#}
+                            {#									آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم#}
+                            {#									افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص#}
+                            {#									طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این#}
+                            {#									صورت می توان امید داشت که تمام و دشواری موجود در ارائه#}
+                            {#									راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل#}
+                            {#									حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای#}
+                            {#									موجود طراحی اساسا مورد استفاده قرار گیرد.#}
+                            {#								</p>#}
+                        </div>
+
+                        <div class="comments-wrap">
+                            <div class="comment-title">
+                                <h3 class="title">دیدگاه ها ({{ article.comments.all.count }})</h3>
+                            </div>
+
+                            <ul class="comment-list">
+                                {% for comment in article.comments.all %}
+                                    <li>
+{#                                        <img src="{% static "images/blog-profile.jpg" %}" alt="Image"/>#}
+                                        <h5>{{ comment.user }}</h5>
+                                        <div class="content">
+                                            <div class="rating">
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                                <i class="bx bxs-star"></i>
+                                            </div>
+                                            <span class="date">{{ comment.created_at }}</span>
+                                        </div>
+                                        <p>
+                                           {{ comment.body }}
+                                        </p>
+                                        <a onclick="set_value({{ comment.id }})" href="#">پاسخ</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <div class="comments-form">
+                            <h3 class="title">دیدگاه خود را به اشتراک بگذارید</h3>
+                            <div class="contact-form">
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="form-group">
+													<textarea
+                                                            name="body"
+                                                            class="form-control"
+                                                            id="message"
+                                                            cols="30"
+                                                            rows="8"
+                                                            required
+                                                            data-error="Write your message"
+                                                            placeholder="متن دیدگاه"
+                                                    ></textarea>
+                                                <input type="hidden" id="parent_id" name="parent_id" value="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <button type="submit" class="default-btn btn-bg-three">
+                                            ارسال دیدگاه
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="side-bar-area">
+                        <div class="search-widget">
+                            <form class="search-form">
+                                <input
+                                        type="search"
+                                        class="form-control"
+                                        placeholder="جست و جو ..."
+                                />
+                                <button type="submit">
+                                    <i class="bx bx-search"></i>
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="side-bar-widget">
+                            <h3 class="title">همه دسته بندی ها </h3>
+                            <div class="side-bar-categories">
+                                <ul>
+                                    {% for caregory in article.category.all %}
+                                        <li>
+                                            <a href="#" class="active">
+                                                {{ caregory }}<span>(70)</span></a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="side-bar-widget">
+                            <h3 class="title">مطالب اخیر</h3>
+                            <div class="widget-popular-post">
+                                {% for o in article_list %}
+                                    {% if o.author.username == article.author.username %}
+
+
+                                        <article class="item">
+                                            <a href="#" class="thumb">
+                                                <span class="full-image cover bg1" role="img"></span>
+                                            </a>
+                                            <div class="info">
+                                                <h4 class="title-text">
+                                                    <a href="{% url 'post_detail:post_detail'  o.id %}">{{ o.title }}</a>
+                                                </h4>
+                                                <p>{{ o.updetad }}</p>
+                                            </div>
+                                        </article>
+                                    {% endif %}
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+
+                        <div class="side-bar-widget">
+                            <h3 class="title">برچسب ها</h3>
+                            <ul class="side-bar-widget-tag">
+                                {% for caregory in article.category.all %}
+                                    <li><a href="#">{{ caregory }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function set_value(id) {
+            document.getElementById('parent_id').value = id
+            document.getElementById("body").placeholder = "Type your reply"
+            window.location.href = "#scrol"
+
+
+        }
+
+
+    </script>
+{% endblock %}

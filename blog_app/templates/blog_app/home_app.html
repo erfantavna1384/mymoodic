@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contact %}
+    <section class="blog-area pt-100 pb-70">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>مطالب اخیر</h2>
+            </div>
+
+            <div class="row pt-45">
+                {#            <div class="col-lg-4 col-md-6">#}
+                {#                <div class="blog-card blog-color-2">#}
+                {#                    <a href="#">#}
+                {#                        <img src="{% static  "images/blog-img.jpg" %}" alt="Images" />#}
+                {#                    </a>#}
+                {#                    <div class="content">#}
+                {#                        <span><i class="bx bx-time-five"></i> 1401/08/06</span>#}
+                {#                        <h3>#}
+                {#                            <a href="#">این یک عنوان تست می باشد </a>#}
+                {#                        </h3>#}
+                {#                        <p>این یک متن پیشنمایش تست برای مطالب موجود می باشد.</p>#}
+                {#                        <a href="#" class="read-btn">ادامه مطلب</a>#}
+                {#                    </div>#}
+                {#                </div>#}
+                {#            </div>#}
+
+                {#            <div class="col-lg-4 col-md-6">#}
+                {#                <div class="blog-card blog-color-2">#}
+                {#                    <a href="#">#}
+                {#                        <img src="{% static "images/blog-img.jpg" %}" alt="Images" />#}
+                {#                    </a>#}
+                {#                    <div class="content">#}
+                {#                        <span><i class="bx bx-time-five"></i> 1401/08/06</span>#}
+                {#                        <h3>#}
+                {#                            <a href="#">این یک عنوان تست می باشد</a>#}
+                {#                        </h3>#}
+                {#                        <p>این یک متن پیشنمایش تست برای مطالب موجود می باشد.</p>#}
+                {#                        <a href="#" class="read-btn">ادامه مطلب</a>#}
+                {#                    </div>#}
+                {#                </div>#}
+                {#            </div>#}
+
+                {#            <div class="col-lg-4 col-md-6">#}
+                {#                <div class="blog-card blog-color-2">#}
+                {#                    <a href="#">#}
+                {#                        <img src="{% static "images/blog-img.jpg" %}" alt="Images" />#}
+                {#                    </a>#}
+                {#                    <div class="content">#}
+                {#                        <span><i class="bx bx-time-five"></i> 1401/08/06</span>#}
+                {#                        <h3>#}
+                {#                            <a href="#">این یک عنوان تست می باشد </a>#}
+                {#                        </h3>#}
+                {#                        <p>این یک متن پیشنمایش تست برای مطالب موجود می باشد.</p>#}
+                {#                        <a href="#" class="read-btn">ادامه مطلب</a>#}
+                {#                    </div>#}
+                {#                </div>#}
+                {#            </div>#}
+
+                {#            <div class="col-lg-4 col-md-6">#}
+                {#                <div class="blog-card blog-color-2">#}
+                {#                    <a href="#">#}
+                {#                        <img src="{% static "images/blog-img.jpg" %}" alt="Images" />#}
+                {#                    </a>#}
+                {#                    <div class="content">#}
+                {#                        <span><i class="bx bx-time-five"></i> 1401/08/06</span>#}
+                {#                        <h3>#}
+                {#                            <a href="#">این یک عنوان تست می باشد</a>#}
+                {#                        </h3>#}
+                {#                        <p>این یک متن پیشنمایش تست برای مطالب موجود می باشد.</p>#}
+                {#                        <a href="#" class="read-btn">ادامه مطلب</a>#}
+                {#                    </div>#}
+                {#                </div>#}
+                {#            </div>#}
+
+                {#            <div class="col-lg-4 col-md-6">#}
+                {#                <div class="blog-card blog-color-2">#}
+                {#                    <a href="#">#}
+                {#                        <img src="{% static "images/blog-img.jpg" %}" alt="Images" />#}
+                {#                    </a>#}
+                {#                    <div class="content">#}
+                {#                        <span><i class="bx bx-time-five"></i> 1401/08/06</span>#}
+                {#                        <h3>#}
+                {#                            <a href="#">این یک عنوان تست می باشد</a>#}
+                {#                        </h3>#}
+                {#                        <p>این یک متن پیشنمایش تست برای مطالب موجود می باشد.</p>#}
+                {#                        <a href="#" class="read-btn">ادامه مطلب</a>#}
+                {#                    </div>#}
+                {#                </div>#}
+                {#            </div>#}
+                {% for article in article %}
+                    <div class="col-lg-4 col-md-6">
+
+                        <div class="blog-card blog-color-2">
+                            <a href="#">
+                                <img src="{% static "images/blog-img.jpg" %}" alt="Images"/>
+                            </a>
+                            <div class="content">
+                                <span><i class="bx bx-time-five"></i>{{ article.created }}</span>
+                                <h3>
+                                    <a href="{% url 'post_detail:post_detail'  article.id %}">{{ article.title }}</a>
+                                </h3>
+                                <p>{{ article.body }}</p>
+                                <a href="#" class="read-btn">ادامه مطلب</a>
+                            </div>
+                        </div>
+
+                    </div>
+                {% endfor %}
+                <div class="col-lg-12 col-md-12 text-center">
+                    {% if article.has_other_pages %}
+                    <div class="pagination-area">
+                        {% if article.has_previous %}
+                        <a href="?page={{ article.previous_page_number}}" class="prev page-numbers">
+                            <i class="bx bx-chevron-right"></i>
+                        </a>
+                        {% endif %}
+                    {% for i  in article.paginator.page_range  %}
+                        {% if article.number == i %}
+                            <span class="page-numbers current" aria-current="page">{{ i }}</span>
+                        {% else %}
+{#                        <span class="page-numbers current" href="?page={{ i }}" aria-current="page"></span>#}
+                        <a href="?page={{ i }}" class="page-numbers">{{ i }}</a>
+{#                        <a href="#" class="page-numbers">3</a>#}
+                        {% endif %}
+                        {% endfor %}
+                        {% if article.has_next %}
+                            <a href="?page={{ article.next_page_number }}{% if request.GET.q %}&q{{ request.GET.q }}{% endif %}" class="next page-numbers">
+                                <i class="bx bx-chevron-left"></i>
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
